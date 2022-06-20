@@ -1,0 +1,13 @@
+version: "2"
+services:
+    nodejs:
+        container_name: atsomeonediscordbot
+        image: node:18
+        user: node
+        command: ./run.sh
+        volumes:
+            - .:/home/node/project
+        working_dir: /home/node/project
+        restart: always
+        environment:
+            - DISCORD_TOKEN=token
